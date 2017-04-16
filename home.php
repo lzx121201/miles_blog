@@ -133,7 +133,7 @@
                         <ul id="user-details">
                             <li class="details">Welcome!</li>
                             <br>
-                            <li class="details"><button type="button" id="edit-profile"><a href="">Edit Profile</a></button></li>
+                            <li class="details"><button type="button" id="edit-profile"><a href="">Profile</a></button></li>
                         </ul>
                     </div>
 
@@ -170,15 +170,20 @@
                         </div>
                         <!-- /.row -->
                     </div>
-
                     <!-- Side Widget Well -->
                     <div class="well">
                         <h4>Side Widget Well</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                     </div>
-
+                    <div class="well">
+                        <h4>Side Widget Well</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                    </div>
+                    <div class="well">
+                        <h4>Side Widget Well</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                    </div>
                 </div>
-
             </div>
             <!-- /.row -->
 

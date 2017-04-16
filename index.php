@@ -1,10 +1,10 @@
 <?php
 if (empty($form_errors)) {
     $username = "";
-    $email="";
-    $password1="";
-    $password2="";
-    $gender="";
+    $email = "";
+    $password1 = "";
+    $password2 = "";
+    $gender = "";
 }
 ?>
 <!DOCTYPE html>
@@ -90,7 +90,7 @@ if (empty($form_errors)) {
             <div class="text-vertical-center">
                 <center><h1 class="quote">Miles</h1></center>
                 <h3 class="quote">Share Every Mile You've Go</h3>
-                <a href="#about" class="btn btn-dark btn-lg" id="start">Discover</a>
+                <a href="home.php" class="btn btn-dark btn-lg" id="start">Discover</a>
             </div>
         </header>
         <hr>
@@ -107,10 +107,6 @@ if (empty($form_errors)) {
                         <input type="password" name="pass" placeholder="Password">
                         <input type="submit" name="login" class="login loginmodal-submit" value="Login">
                     </form>
-
-                    <div class="login-help">
-                        <a href="register.php">Register</a> - <a href="#">Forgot Password</a>
-                    </div>
                 </div>
             </div>
         </section>
@@ -148,7 +144,9 @@ if (empty($form_errors)) {
                                 </select>
                             </div>
                             <div>
-                                <button type="button" id="register_button" class="button submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>     Submit</button>
+                                <center>
+                                    <button type="button" id="register_button" class="button submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>     Submit</button>
+                                </center>
                             </div>
                         </div>
                     </form>
