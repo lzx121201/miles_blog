@@ -1,3 +1,12 @@
+<?php
+if (empty($form_errors)) {
+    $username = "";
+    $email="";
+    $password1="";
+    $password2="";
+    $gender="";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +17,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <title>Agency - Start Bootstrap Theme</title>
 
         <!-- Bootstrap Core CSS -->
@@ -21,7 +29,8 @@
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="js/register_js.js" type="text/javascript"></script>
         <!-- Theme CSS -->
         <link href="css/agency.min.css" rel="stylesheet">
 
@@ -113,33 +122,33 @@
             </div>
             <div class="contact-section">
                 <div class="container">
-                    <form id="register-form">
+                    <form id="register-form" method="post" action="processRegisteration.php">
                         <div class="container">
                             <div class="form-group">
                                 <label for="exampleInputUsername" class="form-title">Your name</label>
-                                <input type="text" class="form-control" placeholder=" Enter Name">
+                                <input type="text" class="form-control" name="exampleInputUsername" id="exampleInputUsername" placeholder=" Enter Name" value="<?php echo $username; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail" class="form-title">Email Address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+                                <input type="email" class="form-control" id="exampleInputEmail" name="exampleInputEmail" placeholder=" Enter Email id" value="<?php echo $email; ?>">
                             </div>	
                             <div class="form-group">
                                 <label for="password" class="form-title">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Not less than 6 characters, at least 1 integer and uppercase letter">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Not less than 8 characters, at least 1 integer,1 uppercase letter and 1 lower case" value="<?php echo $password1; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="form-title">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirm-password" placeholder="">
+                                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="" value="<?php echo $password2; ?>">
                             </div>
                             <div class="form-group">
                                 <label for ="gender" class="form-title">Gender</label>
-                                <select class="form-control">
-                                    <option>Male</option>
-                                    <option>Female</option>
+                                <select class="form-control" id="gender" name="gender"  value="<?php echo $gender; ?>">
+                                    <option value="MALE">Male</option>
+                                    <option value="FEMALE">Female</option>
                                 </select>
                             </div>
                             <div>
-                                <button type="button" class="button submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>     Submit</button>
+                                <button type="button" id="register_button" class="button submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>     Submit</button>
                             </div>
                         </div>
                     </form>
