@@ -101,18 +101,17 @@ $(document).ready(function() {
         {
             $("#password2").next().text("");
         }
-        
         if(gender === "")
         {
             isValid = false;
             errorM += "- Gender is required!\n";
         }
-        else if((gender !== "MALE" || gender !== "FEMALE") && gender !== "")
-        {
-            
-            isValid = false;
-            errorM += "- Please check your gender!\n";
-        }
+//        else if(gender !== "MALE" || gender !== "FEMALE" && gender !== "")
+//        {
+//            
+//            isValid = false;
+//            errorM += "- Please check your gender!\n";
+//        }
         else
         {
             $("#gender").next().text("");
@@ -132,8 +131,12 @@ $(document).ready(function() {
                     'gender':gender
                 },
                 success: function (data) {
-                   alert(data);
-                    //window.location.href='adminOrder.php';
+//                    if(!data.inclues("html"))
+//                    {alert(data);}
+                    alert(data);
+                    //else{
+                    //window.location.href='test.php';
+                //}
                 },
                 error: function () {}
             });

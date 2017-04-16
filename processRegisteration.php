@@ -1,6 +1,6 @@
 <?php
-
 require_once ("Includes/database.php");
+
 include_once 'Includes/validate.php';
 session_start();
 
@@ -12,6 +12,19 @@ $form_errors = array_merge($form_errors, check_min_length($fields_to_check_lengt
 $form_errors = array_merge($form_errors, check_email($_POST));
 $form_errors = array_merge($form_errors, valid_2_password($_POST));
 $form_errors = array_merge($form_errors, valid_username($_POST));
+//$form_errors = array_merge($form_errors, check_user_exist($_POST));
+
+$email = filter_input(INPUT_POST, "exampleInputEmail", FILTER_SANITIZE_EMAIL);
+    $query2 = "SELECT * FROM user WHERE email = :email";
+    $statement2 = $db->prepare($query2);
+    $statement2->bindValue(':email', $email);
+    $statement2->execute();
+    $result = $statement2->fetchAll();
+    
+    if(!empty($result))
+    {
+        $form_errors[] = "- This email address has already been registered!/n";
+    }
 
 if(!empty($form_errors))
 {
@@ -20,11 +33,12 @@ if(!empty($form_errors))
     $password1 = $_POST["password"];
     $password2 = $_POST["confirm-password"];
     $gender = $_POST['gender'];
-    $errors="";
+    $error="";
     foreach ($form_errors as $s)
     {
         $error+=$s;
     }
+    print_r($form_errors);
     echo $error;
     include('index.php');
     exit();
@@ -41,13 +55,13 @@ else
     $statement->bindValue(':username', $username);
     $statement->bindValue(':email', $email);
     $statement->bindValue(':password', $hashed_password);
-        $statement->bindValue(':gender', $gender);
+    $statement->bindValue(':gender', $gender);
 
 //$statement->bindValue(':password', $password1);   
     $statement->execute();
     $statement->closeCursor();
 
-    $query1 = "SELECT * FROM user WHERE username = :name";
+    $query1 = "SELECT * FROM user WHERE name = :name";
     $statement1 = $db->prepare($query1);
     $statement1->bindValue(':name', $username);
     $statement1->execute();
@@ -56,6 +70,6 @@ else
     $_SESSION['username'] = $username;
     $_SESSION['userID'] = $result['userID'];
     $_SESSION['userType'] = $result['userType'];
-    header('location:userpage.php');
+    header('location:test.php');
     
 }

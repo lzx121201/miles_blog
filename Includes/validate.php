@@ -10,6 +10,16 @@ function check_empty_fields($required_fields_array) {
     return $form_errors;
 }
 
+//function check_user_exist($data)
+//{
+//    require_once ("Includes/database.php");
+//
+//    $form_errors = array();
+//
+//    
+//    return $form_errors;
+//}
+
 function check_min_length($fields_to_check_length) {
     $form_errors = array();
 
@@ -23,7 +33,7 @@ function check_min_length($fields_to_check_length) {
 
 function check_email($data) {
     $form_errors = array();
-    $key = 'email_address';
+    $key = 'exampleInputEmail';
     if (array_key_exists($key, $data)) {
         if ($_POST[$key] != null) {
             $key = filter_var($key, FILTER_SANITIZE_EMAIL);
@@ -48,8 +58,8 @@ function check_email($data) {
 
 function valid_2_password($data) {
     $form_errors = array();
-    $password1 = $_POST['password1'];
-    $password2 = $_POST['password2'];
+    $password1 = $_POST['password'];
+    $password2 = $_POST['confirm-password'];
 
     $p1 = '/[A-Z]/';
     $p2 = '/[a-z]/';
@@ -105,7 +115,7 @@ function valid_password($data) {
 
 function valid_username($data) {
     $form_errors = array();
-    $username = $_POST['username'];
+    $username = $_POST['exampleInputUsername'];
 
     $p4 = '/!#$%^&*{}()<.>]/';
 
