@@ -2,59 +2,54 @@ $(document).ready(function ()
 {
     $("#login_button").click(function ()
     {
-        var username = $("#username").val();
-        var password = $("#password").val();
+        var username = $("#user").val();
+        var password = $("#pass").val();
         var isValid = true;
-        if (username === "")
+                var errorM = "";
+
+       if (username === "")
         {
             isValid = false;
-            $("#username").next().text("This field is requied.");
-        } else if (username.length < 6 && username !== "")
+            errorM += "- Email address is required!\n";
+        } 
+        else if (username !== "" && validateEmail(username) === false)
         {
             isValid = false;
-            $("#username").next().text("Length is less than 6.");
-        } else if (validateInput(username) === false && username.length >= 6 && username !== "")
-        {
-            isValid = false;
-            $("#username").next().text("Invalid Input!");
+            errorM += "- Your email address is invalid!\n";
         } else
         {
-            $("#username").next().text("");
+            $("#user").next().text("");
         }
 
         if (password === "")
         {
             isValid = false;
-            $("#password").next().text("This field is requied.");
+            errorM += "- Password is required!\n";
         } else if (password.length < 8 && password !== "")
         {
             isValid = false;
-            $("#password").next().text("Length is less than 8.");
-        } else if (validateInput(password) === false && password.length >= 8 && password !== "")
+            errorM += "- Password length is less than 8!\n";
+        } 
+        else
         {
-            isValid = false;
-            $("#password").next().text("Invalid Input!");
-        } else
-        {
-            $("#password").next().text("");
+            $("#pass").next().text("");
         }
-
+        
         if (isValid)
         {
-            $("#login_form").submit();
+            $("#login-form").submit();
+        }
+        else
+        {
+            alert(errorM);
+            
         }
     });
 
 });
 
-function validateInput(str) {
-    var regex = new RegExp("[a-zA-Z0-9]");
-    var valid = true;
-    var i = 0;
-    while (i < str.length && valid === true)
-    {
-        valid = regex.test(str.charAt(i));
-        i++;
-    }
-    return valid;
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
+

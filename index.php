@@ -1,10 +1,16 @@
 <?php
-if (empty($form_errors)) {
+if (empty($form_errors) || !isset($form_errors)) {
     $username = "";
     $email = "";
     $password1 = "";
     $password2 = "";
     $gender = "";
+}
+if(empty($form_errors1) || !isset($form_errors1))
+{
+        $user = "";
+        $pass = "";
+    
 }
 ?>
 <!DOCTYPE html>
@@ -31,6 +37,7 @@ if (empty($form_errors)) {
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="js/register_js.js" type="text/javascript"></script>
+        <script src="js/login_js.js" type="text/javascript"></script>
         <!-- Theme CSS -->
         <link href="css/agency.min.css" rel="stylesheet">
 
@@ -102,10 +109,12 @@ if (empty($form_errors)) {
             </div>
             <div class="modal-dialog">
                 <div class="loginmodal-container">
-                    <form id="login-form" method="POST" action="">
-                        <input type="email" name="user" placeholder="Email">
-                        <input type="password" name="pass" placeholder="Password">
-                        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                    <form id="login-form" method="post" action="processLogin.php">
+                        <input type="email" name="user" id="user" placeholder="Email" value="<?php echo $user; ?>">
+                        <input type="password" name="pass" id="pass" placeholder="Password" value="<?php echo $pass; ?>">
+                        <center>
+                            <input type="button" name="login" id="login_button" class="login loginmodal-submit" value="Login">
+                        </center>
                     </form>
                 </div>
             </div>
