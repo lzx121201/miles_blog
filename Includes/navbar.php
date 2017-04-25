@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == TRUE) {
+    $U = $_SESSION['username'];
+    $UID = $_SESSION['UserID'];
+    $L = $_SESSION['loggedIn'];
+} else {
+    $L = FALSE;
+}
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -47,20 +57,36 @@ and open the template in the editor.
             <ul class="sidebar-nav">
                 <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
                 <li class="sidebar-brand">
-                    <a href="#top" onclick=$("#menu-close").click();>Jin</a>
+                    <?php
+                    if ($L == FALSE) {
+                        echo '<a href="#top" onclick=$("#menu-close").click();>Welcome!</a>';
+                    } else {
+                        echo '<a href="#top" onclick=$("#menu-close").click();>' . $U . '</a>';
+                    }
+                    ?>
                 </li>
                 <li class="menu">
                     <a href="#top" onclick=$("#menu-close").click();>Home</a>
                 </li>
+                <?php
+                if ($L == FALSE) {
+                    ?>
+                    <li class="menu">
+                        <a href="index.php#login-form" onclick=$("#menu-close").click();>Login</a>
+                    </li>
+                    <li class="menu">
+                        <a href="index.php#register-form" onclick=$("#menu-close").click();>Register</a>
+                    </li>
+                <?php } ?>
                 <li class="menu">
-                    <a href="index.php #service" onclick=$("#menu-close").click();>Login</a>
+                    <a href="index.php#team" onclick=$("#menu-close").click();>About Us</a>
                 </li>
-                <li class="menu">
-                    <a href="index.php #portfolio" onclick=$("#menu-close").click();>Register</a>
-                </li>
-                <li class="menu">
-                    <a href="index.php #team" onclick=$("#menu-close").click();>About us</a>
-                </li>
+                <?php 
+                    if($L == TRUE)
+                    {
+                        echo ' <li class="menu"><a href="includes/logout.php" onclick=$("#menu-close").click();>Log Out</a></li>';
+                    }
+                ?>
             </ul>
         </nav>
     <body>

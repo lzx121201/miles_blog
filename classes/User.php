@@ -16,7 +16,17 @@ class User {
     private $uid;
     public $email;
     public $gender;
+    public $profilePic;
     
+    public function __construct($uname, $uid, $email, $gender, $profilePic) {
+        $this->uname = $uname;
+        $this->uid = $uid;
+        $this->email = $email;
+        $this->gender = $gender;
+        $this->profilePic = $profilePic;
+    }
+
+
     
     
 }
