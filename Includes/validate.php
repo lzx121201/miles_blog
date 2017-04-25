@@ -31,9 +31,8 @@ function check_min_length($fields_to_check_length) {
     return $form_errors;
 }
 
-function check_email($data) {
+function check_email($key,$data) {
     $form_errors = array();
-    $key = 'exampleInputEmail';
     if (array_key_exists($key, $data)) {
         if ($_POST[$key] != null) {
             $key = filter_var($key, FILTER_SANITIZE_EMAIL);
@@ -81,9 +80,9 @@ function valid_2_password($data) {
     return $form_errors;
 }
 
-function valid_password($data) {
+function valid_password($key,$data) {
     $form_errors = array();
-    $password = $_POST['password'];
+    $password = $_POST[$key];
 
     $p1 = '/[A-Z]/';
     $p2 = '/[a-z]/';

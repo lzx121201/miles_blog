@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -131,7 +135,14 @@
                     <div class="well">
                         <img src="img/default-profile-pic.png" alt="defualt profile picture" id="default-pic"/>
                         <ul id="user-details">
-                            <li class="details">Welcome!</li>
+                            <li class="details">Welcome
+                                <?php 
+                                    if( isset($_SESSION['username']))
+                                    {
+                                        echo ", ",$_SESSION['username'];                                        
+                                    }
+                                ?>
+                                !</li>
                             <br>
                             <li class="details"><button type="button" id="edit-profile"><a href="">Profile</a></button></li>
                         </ul>

@@ -9,7 +9,7 @@ $required_fields = array('exampleInputUsername', 'exampleInputEmail', 'password'
 $form_errors = array_merge($form_errors, check_empty_fields($required_fields));
 $fields_to_check_length = array('exampleInputUsername' => 6, 'password' => 8, 'confirm-password' => 8);
 $form_errors = array_merge($form_errors, check_min_length($fields_to_check_length));
-$form_errors = array_merge($form_errors, check_email($_POST));
+$form_errors = array_merge($form_errors, check_email('exampleInputEmail',$_POST));
 $form_errors = array_merge($form_errors, valid_2_password($_POST));
 $form_errors = array_merge($form_errors, valid_username($_POST));
 //$form_errors = array_merge($form_errors, check_user_exist($_POST));
