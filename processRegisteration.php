@@ -64,9 +64,9 @@ else
     $statement1->execute();
     $result = $statement1->fetch();
     session_start();
+    $_SESSION['loggedIn'] = TRUE;
     $_SESSION['username'] = $username;
-    $_SESSION['userID'] = $result['userID'];
-    $_SESSION['userType'] = $result['userType'];
+    $_SESSION['UserID'] = $result['UserID'];
     header('location:test.php');
     
 }

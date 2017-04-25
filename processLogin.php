@@ -43,9 +43,9 @@ else
         $hashed_password = $result['password'];
         $username = $result['name'];
         if (password_verify($password, $hashed_password)) {
-            $_SESSION['userID'] = $id;
+            $_SESSION['UserID'] = $id;
             $_SESSION['username'] = $username;
-            $_SESSION['userType'] = $userType;
+            $_SESSION['loggedIn'] = TRUE;
             header('location:home.php');
            
             //echo "password valid";

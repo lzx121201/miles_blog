@@ -1,6 +1,15 @@
 <?php
 session_start();
-
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == TRUE) 
+{
+    $U = $_SESSION['username'];
+    $UID = $_SESSION['UserID'];
+    $L = $_SESSION['loggedIn'];
+}
+ else 
+{
+     $L = FALSE;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -136,15 +145,20 @@ session_start();
                         <img src="img/default-profile-pic.png" alt="defualt profile picture" id="default-pic"/>
                         <ul id="user-details">
                             <li class="details">Welcome
-                                <?php 
-                                    if( isset($_SESSION['username']))
-                                    {
-                                        echo ", ",$_SESSION['username'];                                        
-                                    }
+                                <?php
+                                if ($L == TRUE) {
+                                    echo ", ", $U;
+                                }
                                 ?>
                                 !</li>
                             <br>
-                            <li class="details"><button type="button" id="edit-profile"><a href="">Profile</a></button></li>
+<?php
+if ($L == TRUE) {
+    ?>                            <li class="details"><button type="button" id="edit-profile"><a href="">Profile</a></button></li><?php
+                            } else {
+                                ?><li class="details"><button type="button" id="edit-profile"><a href="index.php#login-form">Log In</a></button></li>
+                            <?php }
+                            ?>
                         </ul>
                     </div>
 
