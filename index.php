@@ -117,7 +117,17 @@ if(empty($form_errors1) || !isset($form_errors1))
                         </center>
                     </form>
                     <div class="col-md-12 error-display">
-
+                        <?php
+                        if(!empty($form_errors1))
+                        {
+                            echo "<ul>";
+                            foreach ($form_errors1 as $e1)
+                            {
+                                echo "<li>$e1</li>";
+                            }
+                            echo "</ul>";
+                        }
+                          ?>
                     </div>
                 </div>
                 <br>
@@ -164,7 +174,17 @@ if(empty($form_errors1) || !isset($form_errors1))
                             </div>
                             <br>
                             <div class="col-md-12 error-display">
-                                hi
+                                <?php
+                        if(!empty($form_errors))
+                        {
+                            echo "<ul>";
+                            foreach ($form_errors as $e)
+                            {
+                                echo "<li>$e</li>";
+                            }
+                            echo "</ul>";
+                        }
+                          ?>
                             </div>
                         </div>
                     </form>

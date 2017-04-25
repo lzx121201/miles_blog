@@ -6,22 +6,18 @@ session_start();
 
 $form_errors1 = array();
 $required_fields = array('user', 'pass');
-$form_errors = array_merge($form_errors1, check_empty_fields($required_fields));
+$form_errors1 = array_merge($form_errors1, check_empty_fields($required_fields));
 $fields_to_check_length = array('user' => 6, 'pass' => 8);
-$form_errors = array_merge($form_errors1, check_min_length($fields_to_check_length));
-$form_errors = array_merge($form_errors1, check_email("user",$_POST));
-$form_errors = array_merge($form_errors1, valid_password("pass",$_POST));
+$form_errors1 = array_merge($form_errors1, check_min_length($fields_to_check_length));
+$form_errors1 = array_merge($form_errors1, check_email("user",$_POST));
+$form_errors1 = array_merge($form_errors1, valid_password("pass",$_POST));
 
 
-if(!empty($form_errors))
+if(!empty($form_errors1))
 {
-    $username = $_POST["user"];
-    $password1 = $_POST["pass"];
-    $error="";
-    foreach ($form_errors1 as $s)
-    {
-        $error+=$s;
-    }
+    $user = $_POST["user"];
+    $pass = $_POST["pass"];
+    
     include('index.php');
     exit();
 }
@@ -37,11 +33,13 @@ else
     $statement->closeCursor();
 
     if (empty($result)) {
-        $form_errors1[] = "User doesn't exsit!";
+        $form_errors1[] = "User doesn't exsit.<br>";
+        $user = $username;
+        $pass = $password;
         include ('index.php');
         exit();
     } else {
-        $id = $result['userID'];
+        $id = $result['UserID'];
         $hashed_password = $result['password'];
         $username = $result['name'];
         if (password_verify($password, $hashed_password)) {
@@ -52,7 +50,9 @@ else
            
             //echo "password valid";
         } else {
-            $form_errors1[] = "Username or password doesn't match!";
+            $form_errors1[] = "Username or password doesn't match.<br>";
+            $user = $username;
+        $pass = $password;
             include ('index.php');
             exit();
         }

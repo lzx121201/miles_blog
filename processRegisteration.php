@@ -23,7 +23,7 @@ $email = filter_input(INPUT_POST, "exampleInputEmail", FILTER_SANITIZE_EMAIL);
     
     if(!empty($result))
     {
-        $form_errors[] = "- This email address has already been registered!/n";
+        $form_errors[] = "This email address has already been registered.<br>";
     }
 
 if(!empty($form_errors))
@@ -34,10 +34,7 @@ if(!empty($form_errors))
     $password2 = $_POST["confirm-password"];
     $gender = $_POST['gender'];
     $error="";
-    foreach ($form_errors as $s)
-    {
-        $error+=$s;
-    }
+    
     print_r($form_errors);
     echo $error;
     include('index.php');
