@@ -5,15 +5,21 @@
  */
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-color: #f2f2f2;
 }
 
-footer {
-    margin: 50px 0;
+.content{
+
 }
 
-.well{
-    float: left;
+.gallery{
+    max-height:300px;
+}
+
+.img{
+    background-size: cover;
+    max-height:400px;
+    width: 100%;
 }
 
 #default-pic{
@@ -22,15 +28,6 @@ footer {
     height: 100px;
     width: 100px;
     float: left;
-}
-
-#user-details{
-    list-style-type: none;
-    float: left;
-}
-
-.details{
-    padding-top: 5px;
 }
 
 #edit-profile{
