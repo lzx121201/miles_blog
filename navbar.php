@@ -32,7 +32,11 @@ and open the template in the editor.
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+        <style>
+            .menu:hover{
+                background-color: rgba(255, 209, 26,1.0);
+            }
+        </style>
     </head>
 
     <body>
@@ -43,22 +47,19 @@ and open the template in the editor.
             <ul class="sidebar-nav">
                 <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
                 <li class="sidebar-brand">
-                    <a href="#top" onclick=$("#menu-close").click();>Start Bootstrap</a>
+                    <a href="#top" onclick=$("#menu-close").click();>Jin</a>
                 </li>
-                <li>
+                <li class="menu">
                     <a href="#top" onclick=$("#menu-close").click();>Home</a>
                 </li>
-                <li>
-                    <a href="#about" onclick=$("#menu-close").click();>About</a>
+                <li class="menu">
+                    <a href="index.php #service" onclick=$("#menu-close").click();>Login</a>
                 </li>
-                <li>
-                    <a href="#services" onclick=$("#menu-close").click();>Services</a>
+                <li class="menu">
+                    <a href="index.php #portfolio" onclick=$("#menu-close").click();>Register</a>
                 </li>
-                <li>
-                    <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
-                </li>
-                <li>
-                    <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+                <li class="menu">
+                    <a href="index.php #team" onclick=$("#menu-close").click();>About us</a>
                 </li>
             </ul>
         </nav>
