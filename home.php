@@ -32,9 +32,6 @@
         <div class="container-fluid content" style="padding: 0">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 gallery" style="padding: 0">
                 <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
-                <div class="col-md-12 title">
-                    <h3>hi</h3>
-                </div>
             </div>
         </div>
 
