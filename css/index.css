@@ -432,7 +432,7 @@ textarea.form-control {
 }
 
 .loginmodal-submit {
-    background-color: rgba(0,0,0,0.7); /* Green */
+    background-color: rgba(0,0,0,0.7);
     border: none;
     color: white;
     padding: 16px 32px;

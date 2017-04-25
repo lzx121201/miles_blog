@@ -107,7 +107,12 @@ if (empty($form_errors)) {
                         <input type="password" name="pass" placeholder="Password">
                         <input type="submit" name="login" class="login loginmodal-submit" value="Login">
                     </form>
+                    <div class="col-md-12 error-display">
+
+                    </div>
                 </div>
+                <br>
+
             </div>
         </section>
 
@@ -147,6 +152,10 @@ if (empty($form_errors)) {
                                 <center>
                                     <button type="button" id="register_button" class="button submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>     Submit</button>
                                 </center>
+                            </div>
+                            <br>
+                            <div class="col-md-12 error-display">
+                                hi
                             </div>
                         </div>
                     </form>
