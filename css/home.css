@@ -8,18 +8,24 @@ body {
     background-color: #f2f2f2;
 }
 
-.content{
-
-}
-
 .gallery{
     max-height:400px;
+    background-color: #000;
 }
 
 .img{
+    position: relative;
     background-size: cover;
     max-height:400px;
     width: 100%;
+}
+
+.img:hover{
+    -webkit-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
+    -moz-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
+    -ms-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
+    -o-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
+    mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent); 
 }
 
 #default-pic{
