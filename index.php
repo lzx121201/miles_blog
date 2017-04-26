@@ -116,7 +116,7 @@ if(empty($form_errors1) || !isset($form_errors1))
                             <input type="button" name="login" id="login_button" class="login loginmodal-submit" value="Login">
                         </center>
                     </form>
-                    <div class="col-md-12 error-display">
+                    <div class="col-md-12 error-display" style="color: #ffd11a;">
                         <?php
                         if(!empty($form_errors1))
                         {
@@ -173,7 +173,7 @@ if(empty($form_errors1) || !isset($form_errors1))
                                 </center>
                             </div>
                             <br>
-                            <div class="col-md-12 error-display">
+                            <div class="col-md-12 error-display" style="background-color: rgba(0,0,0,0.7); color: #ffd11a">
                                 <?php
                         if(!empty($form_errors))
                         {
