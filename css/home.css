@@ -10,13 +10,14 @@ body {
 
 .gallery{
     position: relative;
+    max-height: 400px;
 /*    background-color: #000;*/
 }
 
 .img{
     position: relative;
     background-size: cover;
-    height: auto;
+    max-height: 400px;;
     width: 100%;
     -webkit-filter: brightness(80%);
     filter: brightness(80%);
