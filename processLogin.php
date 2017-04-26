@@ -1,7 +1,6 @@
 <?php
-require_once ("Includes/database.php");
-
-include_once 'Includes/validate.php';
+rrequire_once ("Includes/database.php");
+require_once ("Includes/validate.php");
 session_start();
 
 $form_errors1 = array();

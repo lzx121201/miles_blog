@@ -1,7 +1,6 @@
 <?php
 require_once ("Includes/database.php");
-
-include_once 'Includes/validate.php';
+require_once ("Includes/validate.php");
 session_start();
 
 $form_errors = array();
@@ -33,10 +32,6 @@ if(!empty($form_errors))
     $password1 = $_POST["password"];
     $password2 = $_POST["confirm-password"];
     $gender = $_POST['gender'];
-    $error="";
-    
-    print_r($form_errors);
-    echo $error;
     include('index.php');
     exit();
 }

@@ -69,7 +69,11 @@ and open the template in the editor.
                     <a href="#top" onclick=$("#menu-close").click();>Home</a>
                 </li>
                 <li class="menu">
-                    <a href="index.php #service" onclick=$("#menu-close").click();>Create New Post</a>
+                    <?php
+                    if ($L == TRUE) {
+                        echo '<a href="addNewPost.php #service" onclick=$("#menu-close").click();>Create New Post</a>';
+                    }
+                    ?>
                 </li>
                 <?php
                 if ($L == FALSE) {

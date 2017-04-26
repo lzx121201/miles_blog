@@ -1,3 +1,9 @@
+<?php 
+include 'navbar.php'; 
+if($L==TRUE){
+?>
+
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -29,14 +35,12 @@ and open the template in the editor.
     </head>
     
     <body>
-        <?php include 'navbar.php'; ?>
-
         <div class="container">
             <form id="newPost-form" method="post" action="processRegisteration.php">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="form-group">
                         
-                        <input type="file" class="form-control" name="exampleInputUsername" id="exampleInputUsername" placeholder=" Enter Name" value="">
+                        <input type="file" class="form-control" name="picName" id="exampleInputUsername" placeholder=" Enter Name" value="">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputTitle" class="form-title">Title</label>
@@ -48,7 +52,9 @@ and open the template in the editor.
                     </div>
                     <div class="form-group">
                         <label for="" class="form-title">Hashtags</label>
-                        <input type="text" class="form-control" id="post-title" name="post-title" placeholder=" Seperate your hashtags with comma" value="">
+                        <input type="text" class="form-control" id="post-title" name="hashtags" placeholder=" Seperate your hashtags with comma" value="">
+                        <input type="hidden" name="userID" value="<?php echo $UID ?>">
+
                     </div>
                     <div>
                         <center>
@@ -59,3 +65,10 @@ and open the template in the editor.
         </div>
     </body>
 </html>
+<?php 
+}
+else
+{
+    
+}
+?>
