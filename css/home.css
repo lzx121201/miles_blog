@@ -9,8 +9,9 @@ body {
 }
 
 .gallery{
+    position: relative;
     max-height:400px;
-    background-color: #000;
+/*    background-color: #000;*/
 }
 
 .img{
@@ -18,14 +19,28 @@ body {
     background-size: cover;
     max-height:400px;
     width: 100%;
+    -webkit-filter: brightness(80%);
+    filter: brightness(80%);
+    transition-duration: 0.4s;
+    position: relative;
 }
 
 .img:hover{
-    -webkit-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
+/*    -webkit-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
     -moz-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
     -ms-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
     -o-mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);    
-    mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent); 
+    mask-box-image:-webkit-linear-gradient(rgba(0, 0, 0, 1) 50%, transparent);*/
+    filter: brightness(100%); 
+}
+
+.text{
+    position: absolute;
+    color: #e6e6e6;
+    font-weight: bold;
+    padding-left: 20px;
+    z-index: 2;
+    top: -85px;
 }
 
 #default-pic{
