@@ -68,24 +68,26 @@ and open the template in the editor.
                 <li class="menu">
                     <a href="#top" onclick=$("#menu-close").click();>Home</a>
                 </li>
+                <li class="menu">
+                    <a href="index.php #service" onclick=$("#menu-close").click();>Create New Post</a>
+                </li>
                 <?php
                 if ($L == FALSE) {
                     ?>
                     <li class="menu">
-                        <a href="index.php#login-form" onclick=$("#menu-close").click();>Login</a>
+                        <a href="index.php #service" onclick=$("#menu-close").click();>Login</a>
                     </li>
                     <li class="menu">
-                        <a href="index.php#register-form" onclick=$("#menu-close").click();>Register</a>
+                        <a href="index.php #portfolio" onclick=$("#menu-close").click();>Register</a>
                     </li>
                 <?php } ?>
                 <li class="menu">
-                    <a href="index.php#team" onclick=$("#menu-close").click();>About Us</a>
+                    <a href="index.php #team" onclick=$("#menu-close").click();>About Us</a>
                 </li>
-                <?php 
-                    if($L == TRUE)
-                    {
-                        echo ' <li class="menu"><a href="includes/logout.php" onclick=$("#menu-close").click();>Log Out</a></li>';
-                    }
+                <?php
+                if ($L == TRUE) {
+                    echo ' <li class="menu"><a href="includes/logout.php" onclick=$("#menu-close").click();>Log Out</a></li>';
+                }
                 ?>
             </ul>
         </nav>

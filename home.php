@@ -29,15 +29,161 @@
     </head>
     <?php include 'navbar.php'; ?>
     <body> 
-        <div class="container-fluid content" style="padding: 0">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 gallery" style="padding: 0">
+        <div class="container-fluid content" style="padding: 0;">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-md gallery" style="padding: 0; margin:0; height: 340px;">
                 <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
                 <div class="col-md-12 text">
                     <h3 class="title">London</h3>
                     <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-sm gallery" style="padding: 0; margin:0; height: 250px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <h5 class="date pull-right">26 APR 2017</h5>
                 </div>
             </div> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-xs gallery" style="padding: 0; margin:0; height: 200px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-lg gallery" style="padding: 0; margin:0; height: 450px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div>
+            
+            
+            
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-md gallery" style="padding: 0; margin:0; height: 340px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-sm gallery" style="padding: 0; margin:0; height: 250px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-xs gallery" style="padding: 0; margin:0; height: 200px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-lg gallery" style="padding: 0; margin:0; height: 450px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div>
+            
+            
+            
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-md gallery" style="padding: 0; margin:0; height: 340px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-sm gallery" style="padding: 0; margin:0; height: 250px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-xs gallery" style="padding: 0; margin:0; height: 200px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-lg gallery" style="padding: 0; margin:0; height: 450px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div>
+            
+            
+            
+            
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-md gallery" style="padding: 0; margin:0; height: 340px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-sm gallery" style="padding: 0; margin:0; height: 250px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-xs gallery" style="padding: 0; margin:0; height: 200px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 visible-lg gallery" style="padding: 0; margin:0; height: 450px;">
+                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
+                <div class="col-md-12 text">
+                    <h3 class="title">London</h3>
+                    <span>by <strong>Jin</strong></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="date pull-right">26 APR 2017</h5>
+                </div>
+            </div>
         </div>
 
         <!-- jQuery -->

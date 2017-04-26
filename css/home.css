@@ -10,14 +10,13 @@ body {
 
 .gallery{
     position: relative;
-    max-height:400px;
 /*    background-color: #000;*/
 }
 
 .img{
     position: relative;
     background-size: cover;
-    max-height:400px;
+    height: auto;
     width: 100%;
     -webkit-filter: brightness(80%);
     filter: brightness(80%);
@@ -40,7 +39,7 @@ body {
     font-weight: bold;
     padding-left: 20px;
     z-index: 2;
-    top: -85px;
+    top: -155px;
 }
 
 #default-pic{
