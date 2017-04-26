@@ -11,18 +11,20 @@ body {
 .gallery{
     position: relative;
     max-height: 400px;
+    min-height: 400px;
 /*    background-color: #000;*/
 }
 
 .img{
     position: relative;
     background-size: cover;
-    max-height: 400px;;
     width: 100%;
     -webkit-filter: brightness(80%);
     filter: brightness(80%);
     transition-duration: 0.4s;
     position: relative;
+    max-height: 400px;
+    min-height: 400px;
 }
 
 .img:hover{
