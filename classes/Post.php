@@ -1,5 +1,5 @@
 <?php
-
+require_once 'Utility.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,8 +22,8 @@ class Post {
     public $No_like;
     public $No_dislike;
     public $hashtag;
-
-    function __construct($PostID = 0, $UserID = 0, $title = '', $content = '', $picName = '', $No_like = 0, $No_dislike = 0, $time = '', $hashtag = '') {
+    public $AllowComment;
+                function __construct($PostID = 0, $UserID = 0, $title = '', $content = '', $picName = '', $No_like = 0, $No_dislike = 0, $time = '', $hashtag = '',$AllowComment=1) {
         $this->UserID = $UserID;
         $this->PostID = $PostID;
         $this->title = $title;
@@ -33,6 +33,7 @@ class Post {
         $this->No_like = $No_like;
         $this->No_dislike = $No_dislike;
         $this->hashtag = $hashtag;
+        $this->AllowComment = $AllowComment;
     }
 
     function getUserID() {
@@ -117,7 +118,6 @@ class Post {
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             error_reporting(E_ALL);
-            //echo "Connected";
         } catch (Exception $ex) {
             $form_errors = array();
             $form_errors[] = $ex->getMessage();
@@ -135,8 +135,8 @@ class Post {
                 <div class="col-md-12 text">
                     <h3 class="title">' . $this->title . '</h3>
                     <span>by <strong>' . $result['name'] . '</strong></span>
-                    <p>' . substr($this->content,0,50) . ' ......</p>
-                    <h5 class="date pull-right">' . $this->time . '</h5>
+                    <p>' . substr($this->content,0,50) . ' ......'.$this->AllowComment.'</p>
+                    <h5 class="date pull-right">' . Utility::formatDate($this->time,"j M Y") . '</h5>
                 </div>
             </div>';
         return $str;
