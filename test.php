@@ -11,17 +11,19 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        require_once ("Includes/database.php");
-
-$query = "SELECT * FROM user";
-    $statement = $db->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchALL(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,'User');
-    $statement->closeCursor();        
-     foreach($result as $vehicle)
-            {
-                echo $vehicle . "<br>";
-            }   
+//        require_once ("Includes/database.php");
+//        require_once 'classes/Post.php';
+//$query = "SELECT * FROM post";
+//    $statement = $db->prepare($query);
+//    $statement->execute();
+//    $result = $statement->fetchALL(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,'Post');
+//    $statement->closeCursor();  
+//    print_r($result);
+//     foreach($result as $vehicle)
+//            {
+//                echo  $vehicle->displayAtHome(). "<br>";
+//            }   
+        echo  $_SERVER['DOCUMENT_ROOT'];
     ?>
     </body>
 </html>

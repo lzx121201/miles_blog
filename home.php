@@ -27,7 +27,12 @@
         <![endif]-->
 
     </head>
-    <?php include 'navbar.php'; ?>
+    <?php 
+    include 'navbar.php'; 
+    require_once ("Includes/database.php");
+        require_once 'classes/Post.php';
+    
+    ?>
     <body> 
         <div class="container-fluid content" style="padding: 0;">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 gallery" style="padding: 0;">
@@ -39,6 +44,18 @@
                     <h5 class="date pull-right">26 APR 2017</h5>
                 </div>
             </div>
+            
+            <?php 
+            $query = "SELECT * FROM post";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchALL(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,'Post');
+    $statement->closeCursor();  
+     foreach($result as $vehicle)
+            {
+                echo  $vehicle->displayAtHome();
+            }   
+            ?>
         </div>
 
         <!-- jQuery -->

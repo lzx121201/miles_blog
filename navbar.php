@@ -71,7 +71,7 @@ and open the template in the editor.
                 <li class="menu">
                     <?php
                     if ($L == TRUE) {
-                        echo '<a href="addNewPost.php #service" onclick=$("#menu-close").click();>Create New Post</a>';
+                        echo '<a href="addNewPost.php" onclick=$("#menu-close").click();>Create New Post</a>';
                     }
                     ?>
                 </li>
@@ -79,18 +79,18 @@ and open the template in the editor.
                 if ($L == FALSE) {
                     ?>
                     <li class="menu">
-                        <a href="index.php #service" onclick=$("#menu-close").click();>Login</a>
+                        <a href="index.php#service" onclick=$("#menu-close").click();>Login</a>
                     </li>
                     <li class="menu">
-                        <a href="index.php #portfolio" onclick=$("#menu-close").click();>Register</a>
+                        <a href="index.php#portfolio" onclick=$("#menu-close").click();>Register</a>
                     </li>
                 <?php } ?>
                 <li class="menu">
-                    <a href="index.php #team" onclick=$("#menu-close").click();>About Us</a>
+                    <a href="index.php#team" onclick=$("#menu-close").click();>About Us</a>
                 </li>
                 <?php
                 if ($L == TRUE) {
-                    echo ' <li class="menu"><a href="includes/logout.php" onclick=$("#menu-close").click();>Log Out</a></li>';
+                    echo ' <li class="menu"><a href="logout.php" onclick=$("#menu-close").click();>Log Out</a></li>';
                 }
                 ?>
             </ul>

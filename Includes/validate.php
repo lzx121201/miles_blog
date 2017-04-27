@@ -4,7 +4,7 @@ function check_empty_fields($required_fields_array) {
     $form_errors = array();
     foreach ($required_fields_array as $name_of_field) {
         if (!isset($_POST[$name_of_field]) || $_POST[$name_of_field] == NULL) {
-            $form_errors[] = $name_of_field . " is a required field.<br>";
+            $form_errors[] = $name_of_field . " is a required field.";
         }
     }
     return $form_errors;
@@ -25,7 +25,7 @@ function check_min_length($fields_to_check_length) {
 
     foreach ($fields_to_check_length as $name_of_field => $minimum_length_required) {
         if (strlen(trim($_POST[$name_of_field])) < $minimum_length_required) {
-            $form_errors[] = $name_of_field . " is too short, must be {$minimum_length_required} characters long.<br>";
+            $form_errors[] = $name_of_field . " is too short, must be {$minimum_length_required} characters long.";
         }
     }
     return $form_errors;
@@ -37,7 +37,7 @@ function check_email($key,$data) {
         if ($_POST[$key] != null) {
             $key = filter_var($key, FILTER_SANITIZE_EMAIL);
             if (filter_var($_POST[$key], FILTER_VALIDATE_EMAIL) === false) {
-                $form_errors[] = $key . " is not a valid email address.<br>";
+                $form_errors[] = $key . " is not a valid email address.";
             }
         }
     }
@@ -66,16 +66,16 @@ function valid_2_password($data) {
 //$p4 = '/!#$%^&*{}()<.>]/';	
 
     if (!preg_match($p1, $password1)) {
-        $form_errors[] = "Password must have at least 1 uppercase letter.<br>";
+        $form_errors[] = "Password must have at least 1 uppercase letter.";
     }
     if (!preg_match($p2, $password1)) {
-        $form_errors[] = "Password must have at least 1 lowercase letter.<br>";
+        $form_errors[] = "Password must have at least 1 lowercase letter.";
     }
     if (!preg_match($p3, $password1)) {
-        $form_errors[] = "Password must have at least 1 number.<br>";
+        $form_errors[] = "Password must have at least 1 number.";
     }
     if ($password1 != $password2) {
-        $form_errors[] = "Passwords don't match.<br>";
+        $form_errors[] = "Passwords don't match.";
     }
     return $form_errors;
 }
@@ -90,13 +90,13 @@ function valid_password($key,$data) {
 //$p4 = '/!#$%^&*{}()<.>]/';	
 
     if (!preg_match($p1, $password)) {
-        $form_errors[] = "Password must have at least 1 uppercase letter.<br>";
+        $form_errors[] = "Password must have at least 1 uppercase letter.";
     }
     if (!preg_match($p2, $password)) {
-        $form_errors[] = "Password must have at least 1 lowercase letter.<br>";
+        $form_errors[] = "Password must have at least 1 lowercase letter.";
     }
     if (!preg_match($p3, $password)) {
-        $form_errors[] = "Password must have at least 1 number.<br>";
+        $form_errors[] = "Password must have at least 1 number.";
     }
     return $form_errors;
 }
@@ -119,7 +119,7 @@ function valid_username($data) {
     $p4 = '/!#$%^&*{}()<.>]/';
 
     if (preg_match($p4, $username)) {
-        $form_errors[] = "Only digits or letters are allowed in username.<br>";
+        $form_errors[] = "Only digits or letters are allowed in username.";
     }
     return $form_errors;
 }

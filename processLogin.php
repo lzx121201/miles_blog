@@ -1,5 +1,5 @@
 <?php
-rrequire_once ("Includes/database.php");
+require_once ("Includes/database.php");
 require_once ("Includes/validate.php");
 session_start();
 
@@ -32,7 +32,7 @@ else
     $statement->closeCursor();
 
     if (empty($result)) {
-        $form_errors1[] = "User doesn't exsit.<br>";
+        $form_errors1[] = "User doesn't exsit.";
         $user = $username;
         $pass = $password;
         include ('index.php');
@@ -49,7 +49,7 @@ else
            
             //echo "password valid";
         } else {
-            $form_errors1[] = "Username or password doesn't match.<br>";
+            $form_errors1[] = "Username or password doesn't match.";
             $user = $username;
         $pass = $password;
             include ('index.php');

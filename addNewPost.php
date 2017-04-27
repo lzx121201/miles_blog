@@ -1,13 +1,3 @@
-<?php 
-include 'navbar.php'; 
-if($L==TRUE){
-   if(!empty($form_errors1))
-   {
-       print_r($form_errors1);
-   }
-?>
-
-
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -28,7 +18,14 @@ and open the template in the editor.
         <!-- Bootstrap Core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/addNewPost.css" rel="stylesheet" type="text/css"/>
-
+<?php 
+include 'navbar.php'; 
+if($L==TRUE){
+if(!empty($form_errors1))
+{
+   print_r($form_errors1);
+}
+?>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
