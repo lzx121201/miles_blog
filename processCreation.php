@@ -1,5 +1,5 @@
 <?php
-
+require_once 'session_timeout.php';
 require_once ("Includes/database.php");
 require_once ("Includes/validate.php");
 require_once ("constants.php");

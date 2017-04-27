@@ -175,15 +175,15 @@ if(empty($form_errors1) || !isset($form_errors1))
                             <br>
                             <div class="col-md-12 error-display" style="background-color: rgba(0,0,0,0.7); color: #ffd11a">
                                 <?php
-                        if(!empty($form_errors))
-                        {
-                            echo "<ul>";
-                            foreach ($form_errors as $e)
-                            {
-                                echo "<li>$e</li>";
-                            }
-                            echo "</ul>";
-                        }
+                                if(!empty($form_errors))
+                                {
+                                    echo "<ul>";
+                                    foreach ($form_errors as $e)
+                                    {
+                                        echo "<li>$e</li>";
+                                    }
+                                    echo "</ul>";
+                                }
                           ?>
                             </div>
                         </div>

@@ -62,6 +62,7 @@ else
     $_SESSION['loggedIn'] = TRUE;
     $_SESSION['username'] = $username;
     $_SESSION['UserID'] = $result['UserID'];
+    $_SESSION['timeout'] = time();
     header('location:test.php');
     
 }
