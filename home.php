@@ -27,35 +27,31 @@
         <![endif]-->
 
     </head>
-    <?php 
-    include 'navbar.php'; 
+    <?php
+    include 'navbar.php';
     require_once ("Includes/database.php");
-        require_once 'classes/Post.php';
-    
+    require_once 'classes/Post.php';
+    require_once ("constants.php");
+
     ?>
     <body> 
         <div class="container-fluid content" style="padding: 0;">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 gallery" style="padding: 0;">
-                <img class="img-responsive img" src="img/IMG_0408.JPG" alt=""/>
-                <div class="col-md-12 text">
-                    <h3 class="title">London</h3>
-                    <span>by <strong>Jin</strong></span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <h5 class="date pull-right">26 APR 2017</h5>
-                </div>
-            </div>
-            
-            <?php 
+
+            <?php
             $query = "SELECT * FROM post";
-    $statement = $db->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchALL(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,'Post');
-    $statement->closeCursor();  
-     foreach($result as $vehicle)
+            $statement = $db->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchALL(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Post');
+            $statement->closeCursor();
+            $count = 0;
+            while($count<MAX_POST_AT_HOME && $count < sizeof($result))
+            //foreach ($result as $r)
             {
-                echo  $vehicle->displayAtHome();
-            }   
+                echo $result[$count]->displayAtHome();
+                $count++;
+            }
             ?>
+            
         </div>
 
         <!-- jQuery -->

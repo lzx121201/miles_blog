@@ -56,8 +56,8 @@ and open the template in the editor.
                     </div>
                     <div class="form-group">
                         <label for="" class="form-title">Allow Comments</label><br>
-                        <input type="radio" name="comments" class="" value="Yes" checked>Yes<br>
-                        <input type="radio" name="comments" class="" value="No" checked>No
+                        <input type="radio" name="comments" class="" value="1" checked>Yes<br>
+                        <input type="radio" name="comments" class="" value="0" checked>No
                     </div>
                     <div>
                         <center>

@@ -5,7 +5,7 @@ require_once ("Includes/validate.php");
 require_once ("constants.php");
 
 $form_errors1 = array();
-$required_fields = array('title', 'content');
+$required_fields = array('title', 'content','comments');
 $form_errors1 = array_merge($form_errors1, check_empty_fields($required_fields));
 $fields_to_check_length = array('content' => 50);
 $form_errors1 = array_merge($form_errors1, check_min_length($fields_to_check_length));
@@ -44,17 +44,18 @@ if (!empty($form_errors1)) {
         $userID = filter_input(INPUT_POST, "userID", FILTER_SANITIZE_NUMBER_INT);
         $content = filter_input(INPUT_POST, "content", FILTER_SANITIZE_STRING);
         $hashtag = filter_input(INPUT_POST, "hashtags", FILTER_SANITIZE_STRING);
-
+        $allowComments = filter_input(INPUT_POST,"comments",FILTER_SANITIZE_NUMBER_INT);
         $pic_name = basename($_FILES["picName"]["name"]);
 
         echo $title, $userID, $content, $hashtag, $pic_name;
-        $query_addPost = "INSERT INTO post (UserID, title, content,picName,hashtag) VALUES (:userID,:title,:content,:picName,:hashtag)";
+        $query_addPost = "INSERT INTO post (UserID, title, content,picName,hashtag,AllowComment) VALUES (:userID,:title,:content,:picName,:hashtag,:comment)";
         $statement8 = $db->prepare($query_addPost);
         $statement8->bindValue(':userID', $userID);
         $statement8->bindValue(':title', $title);
         $statement8->bindValue(':content', $content);
         $statement8->bindValue(':picName', $pic_name);
         $statement8->bindValue(':hashtag', $hashtag);
+        $statement8->bindValue(':comment', $allowComments);
         $statement8->execute();
         $statement8->closeCursor();
 
