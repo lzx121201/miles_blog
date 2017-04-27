@@ -20,10 +20,10 @@ and open the template in the editor.
         <link href="css/addNewPost.css" rel="stylesheet" type="text/css"/>
         <?php
         include 'navbar.php';
-//        if ($L == TRUE) {
-//            if (!empty($form_errors1)) {
-//                print_r($form_errors1);
-        //}
+        if ($L == TRUE) {
+            if (!empty($form_errors1)) {
+                print_r($form_errors1);
+        }
         ?>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,7 +70,7 @@ and open the template in the editor.
     </body>
 </html>
 <?php
-//} else {
-//    header('Location: home.php');
-//}
+} else {
+    header('Location: home.php');
+}
 ?>
