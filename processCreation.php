@@ -1,25 +1,26 @@
 <?php
 require_once ("Includes/database.php");
 require_once ("Includes/validate.php");
+require_once ("constants.php");
 
 $form_errors1 = array();
-$required_fields = array('title', 'content', 'hashtags');
+$required_fields = array('title', 'content');
 $form_errors1 = array_merge($form_errors1, check_empty_fields($required_fields));
 $fields_to_check_length = array('content' => 20);
 $form_errors1 = array_merge($form_errors1, check_min_length($fields_to_check_length));
-
+//echo isset($_POST['picName']);
+//echo $_POST['picName'];
 $target_dir = "img/";
 $target_file = $target_dir . basename($_FILES["picName"]["name"]);
+if (basename($_FILES["picName"]["name"]) == "") {
+    $form_errors1[] = "No picture selected.";
+}else{
 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-if (isset($_POST["addPost_button"])) {
+if (isset($_POST["post_button"])) {
     $check = getimagesize($_FILES["picName"]["tmp_name"]);
     if ($check == false) {
         $form_errors1[] = "File is not an image.";
     }
-}
-
-if (basename($_FILES["picName"]["name"]) == "") {
-    $form_errors1[] = "No picture selected.";
 }
 if ($_FILES["picName"]["size"] > 30*MB) {
     $form_errors1[] = "Sorry, your file is too large.";
@@ -30,7 +31,7 @@ if (basename($_FILES["picName"]["name"]) != "" && $imageFileType != "jpg" && $im
 if (file_exists($target_file)) {
     $form_errors1[]= "Sorry, file already exists.";
 }
-
+}
 
 if (!empty($form_errors1)) {
     include 'addNewPost.php';
@@ -56,7 +57,7 @@ if (!empty($form_errors1)) {
         $statement8->execute();
         $statement8->closeCursor();
 
-        header('Location: .php');
+        header('Location: home.php');
     } else {
         $form_errors1[] = "Sorry, there was an error uploading your image.";
         include 'addNewPost.php';

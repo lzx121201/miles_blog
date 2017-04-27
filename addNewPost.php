@@ -1,6 +1,10 @@
 <?php 
 include 'navbar.php'; 
 if($L==TRUE){
+   if(!empty($form_errors1))
+   {
+       print_r($form_errors1);
+   }
 ?>
 
 
@@ -36,19 +40,18 @@ and open the template in the editor.
     
     <body>
         <div class="container">
-            <form id="newPost-form" method="post" action="processRegisteration.php">
+            <form id="newPost-form" method="post" action="processCreation.php" enctype="multipart/form-data">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="form-group">
-                        
-                        <input type="file" class="form-control" name="picName" id="exampleInputUsername" placeholder=" Enter Name" value="">
+                        <input type="file" class="form-control" name="picName" id="picName" >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputTitle" class="form-title">Title</label>
-                        <input type="text" class="form-control" id="post-title" name="post-title" placeholder=" Enter Title" value="">
+                        <input type="text" class="form-control" id="post-title" name="title" placeholder=" Enter Title" value="">
                     </div>	
                     <div class="form-group">
                         <label for="" class="form-title">Content</label>
-                        <textarea rows="20" type="text" class="form-control" id="about-you" name="about-you" placeholder=" Enter text here..." value=""></textarea>
+                        <textarea rows="20" type="text" class="form-control" id="about-you" name="content" placeholder=" Enter text here..." value=""></textarea>
                     </div>
                     <div class="form-group">
                         <label for="" class="form-title">Hashtags</label>
@@ -58,10 +61,11 @@ and open the template in the editor.
                     </div>
                     <div>
                         <center>
-                            <button type="button" id="register_button" class="button submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>     Post</button>
+                            <button type="submit" id="post_button" class="button submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>     Post</button>
                         </center>
                     </div>
                 </div>
+            </form>
         </div>
     </body>
 </html>
@@ -69,6 +73,7 @@ and open the template in the editor.
 }
 else
 {
-    
+          header('Location: home.php');
+  
 }
 ?>
