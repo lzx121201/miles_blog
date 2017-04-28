@@ -51,8 +51,8 @@ and open the template in the editor.
         <div class="container-fluid big-container" style="padding: 0; top: 0; left: 0;">
             <div class="col-md-6 col-sm-12 profile-container" style="padding: 0;">
                 <div class="col-md-6 col-md-offset-3" style="padding: 0; top: 10px;">
-
-<!--                    <center><img class="img-responsive visible-lg profile-pic" src="img/team/1.jpg" alt="" style="height:250px;"/></center>
+<!--
+                    <center><img class="img-responsive visible-lg profile-pic" src="img/team/1.jpg" alt="" style="height:250px;"/></center>
 <center><img class="img-responsive visible-md profile-pic" src="img/team/1.jpg" alt="" style="height:250px;"/></center>
 <center><img class="img-responsive visible-sm profile-pic" src="img/team/1.jpg" alt="" style="width: 50%;height:250px;"/></center>
 <center><img class="img-responsive visible-xs profile-pic" src="img/team/1.jpg" alt="" style="width: 50%; height:180px;"/></center>
@@ -75,17 +75,17 @@ and open the template in the editor.
                         <h3 id="username"><?php echo $result->getName(); ?> &nbsp;&nbsp;<button type="button" class="glyphicon glyphicon-edit edit-btn"></button></h3>
                     </center>
                 </div>
+                
+                <div class="col-md-12" style="color: #fff; top: 20px;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+                </div>
 
                 <div class="col-md-12" style="color: #fff; top: 20px">
                     <h4>Your Posts</h4>
                     <ul class="your-post">
-                        <!--                        <li><a href="">post 1</a></li>
+<!--                                                <li><a href="">post 1</a></li>
                                                 <li><a href="">post 2</a></li>
-                                                <li><a href="">post 3</a></li>
-                                                <li><a href="">post 4</a></li>
-                                                <li><a href="">post 5</a></li>
-                                                <li><a href="">post 6</a></li>
-                                                <li><a href="">post 7</a></li>-->
+                                                <li><a href="">post 3</a></li>-->
                         <?php
                         $result->displayPostsOfUser();
                         ?>

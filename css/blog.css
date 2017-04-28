@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 28, 2017, 9:31:54 PM
+    Author     : User
+*/
+body{
+    background-color: #f2f2f2 !important;
+}
+
+.comment-btn{
+    background-color: #ffd11a !important;
+    border-color: #ffd11a !important;
+}
+
+.like-btn{
+    background-color: transparent;
+    border: 0px;
+}
+
+.like-btn:active{
+    color: #ffd11a;
+}
+
+.like-btn:focus{
+    background-color: #ffd11a;
+}
