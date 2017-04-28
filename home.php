@@ -26,6 +26,8 @@
 
     </head>
     <?php
+            include_once 'session.php';
+
     include 'navbar.php';
     require_once ("Includes/database.php");
     require_once 'classes/Post.php';

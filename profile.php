@@ -1,3 +1,11 @@
+<?php
+        require_once 'session_timeout.php';
+        include_once 'session.php';
+if ($L == FALSE) {
+                header("location: index.php");
+}else{
+
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -19,14 +27,15 @@ and open the template in the editor.
         <?php
         include 'navbar.php';
         require_once ("Includes/database.php");
+        require_once 'classes/Post.php';
 
         require_once 'classes/User.php';
 
-        if ($L == TRUE) {
+        
             if (!empty($form_errors1)) {
                 
             }
-        }
+        
 
         $query = "SELECT * FROM user WHERE UserID = :uid";
         $statement = $db->prepare($query);
@@ -104,3 +113,7 @@ and open the template in the editor.
         <script src="js/agency.min.js"></script>
     </body>
 </html>
+<?php
+        }
+
+?>

@@ -21,17 +21,22 @@ class User {
     public $email;
     public $gender;
     public $profilePic;
+    public $description;
 
-    function __construct($UserID = 0, $name = "", $password = "", $email = "", $gender = "", $profilePic = "") {
+    function __construct($UserID = 0, $name = "", $password = "", $email = "", $gender = "", $profilePic = "",$description = "") {
         $this->UserID = $UserID;
         $this->name = $name;
         $this->password = $password;
         $this->email = $email;
         $this->gender = $gender;
         $this->profilePic = $profilePic;
+        $this->description = $description;
+    }
+    function getDescription() {
+        return $this->description;
     }
 
-    function getUserID() {
+        function getUserID() {
         return $this->UserID;
     }
 
@@ -74,8 +79,11 @@ class User {
     function setGender($gender) {
         $this->gender = $gender;
     }
+    function setDescription($description) {
+        $this->description = $description;
+    }
 
-    function setProfilePic($profilePic) {
+        function setProfilePic($profilePic) {
         $this->profilePic = $profilePic;
     }
 

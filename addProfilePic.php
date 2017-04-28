@@ -4,7 +4,7 @@ require_once ("Includes/database.php");
 require_once ("Includes/validate.php");
 require_once ("constants.php");
 
-//$form_errors1 = array();
+$form_errors1 = array();
 //$required_fields = array('title', 'content','comments');
 //$form_errors1 = array_merge($form_errors1, check_empty_fields($required_fields));
 //$fields_to_check_length = array('content' => 50);

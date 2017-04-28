@@ -7,4 +7,6 @@ define("MAX_POST_AT_HOME", 8);
 define("TIMEOUT_DURATION",600);
 define("DEFAULT_PROFILE_PIC","default-profile-pic.png");
 define("MAX_POST_AT_PROFILE", 7);
+define("MAX_DESCRIPTION_LEN", 300);
+
 
