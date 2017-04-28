@@ -20,6 +20,10 @@ and open the template in the editor.
         <link href="css/addNewPost.css" rel="stylesheet" type="text/css"/>
         <?php
         include 'navbar.php';
+        if(!isset($_SESSION['timeout']))
+        {
+                header("location: logout.php");
+        }
         if ($L == TRUE) {
             if (!empty($form_errors1)) {
                 print_r($form_errors1);

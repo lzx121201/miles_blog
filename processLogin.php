@@ -45,6 +45,7 @@ else
             $_SESSION['UserID'] = $id;
             $_SESSION['username'] = $username;
             $_SESSION['loggedIn'] = TRUE;
+            $_SESSION['timeout'] = time();
             header('location:home.php');
            
             //echo "password valid";

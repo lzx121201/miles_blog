@@ -5,4 +5,5 @@ session_destroy();
 $_SESSION['loggedIn'] = FALSE;
     $_SESSION['username'] = "";
     $_SESSION['UserID'] = "";
+    $_SESSION['timeout'] = "";
 header('location: index.php');
