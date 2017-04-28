@@ -1,5 +1,6 @@
 <?php
 require_once 'Utility.php';
+require_once './constants.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -135,7 +136,7 @@ class Post {
                 <div class="col-md-12 text">
                     <h3 class="title">' . $this->title . '</h3>
                     <span>by <strong>' . $result['name'] . '</strong></span>
-                    <p>' . substr($this->content,0,50) . ' ......'.$this->AllowComment.'</p>
+                    <p>' . substr($this->content,0,MAX_LENGTH_OF_C_P) . ' ......'.$this->AllowComment.'</p>
                     <h5 class="date pull-right">' . Utility::formatDate($this->time,"j M Y") . '</h5>
                 </div>
             </div>';
@@ -146,5 +147,20 @@ class Post {
     {
         return '<li><a href="">'.$this->title.'</a></li>';
         
+    }
+    
+    function displayAtAllPost()
+    {
+        $ap = '<div class="col-md-4 portfolio-item">
+                        <a href="#">
+                            <img class="img-responsive posts" src="img/'.$this->picName.'" alt="">
+                        </a>
+                        <span class="fa fa-thumbs-up fa-lg like">&nbsp;&nbsp; '.$this->No_like.'</span>
+                        <h3>
+                            <a href="#" style="color: #000">'.$this->title.'</a>
+                        </h3>
+                        <p>'.substr($this->content,0,MAX_LENGTH_OF_C_P).' ......</p>
+                    </div>';
+        return $ap;
     }
 }

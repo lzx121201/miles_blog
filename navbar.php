@@ -73,6 +73,9 @@ and open the template in the editor.
                     <a href="home.php#top" onclick=$("#menu-close").click();>Home</a>
                 </li>
                 <li class="menu">
+                    <a href="allPost.php#top?page=1" onclick=$("#menu-close").click();>All Posts</a>
+                </li>
+                <li class="menu">
                     <?php
                     if ($L == TRUE) {
                         echo '<a href="addNewPost.php" onclick=$("#menu-close").click();>Create New Post</a>';

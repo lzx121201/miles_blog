@@ -38,7 +38,7 @@
         <div class="container-fluid content" style="padding: 0;">
 
             <?php
-            $query = "SELECT * FROM post";
+            $query = "SELECT * FROM post ORDER BY time DESC";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetchALL(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Post');
