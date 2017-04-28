@@ -66,12 +66,12 @@ and open the template in the editor.
                     if ($L == FALSE) {
                         echo '<a href="#top" onclick=$("#menu-close").click();>Welcome!</a>';
                     } else {
-                        echo '<a href="#top" onclick=$("#menu-close").click();>' . $U . '</a>';
+                        echo '<a href="profile.php#top" onclick=$("#menu-close").click();>' . $U . '</a>';
                     }
                     ?>
                 </li>
                 <li class="menu">
-                    <a href="#top" onclick=$("#menu-close").click();>Home</a>
+                    <a href="home.php#top" onclick=$("#menu-close").click();>Home</a>
                 </li>
                 <li class="menu">
                     <?php

@@ -32,8 +32,7 @@ if (basename($_FILES["picName"]["name"]) == "") {
 //    if (file_exists($target_file)) {
 //        $form_errors1[] = "Sorry, file already exists.";
 //    }
-}print_r($_FILES);
-echo $_SERVER['DOCUMENT_ROOT'].$target_file;
+}
 if (!empty($form_errors1)) {
     include 'addNewPost.php';
     exit();

@@ -108,7 +108,7 @@ class Post {
         $this->hashtag = $hashtag;
     }
 
-    public function displayAtHome() {
+    function displayAtHome() {
         $dsn = "mysql:host=localhost;dbname=miles";
         $username = "root";
         $password = "";
@@ -142,4 +142,9 @@ class Post {
         return $str;
     }
 
+    function displayTileInList()
+    {
+        return '<li><a href="">'.$this->title.'</a></li>';
+        
+    }
 }
