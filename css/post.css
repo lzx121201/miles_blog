@@ -7,41 +7,29 @@ and open the template in the editor.
     Created on : Apr 28, 2017, 4:01:36 PM
     Author     : User
 */
+body{
+    background-color: #e6e6e6 !important;
+}
+
 .portfolio-item{
     overflow: hidden;
-    
 }
 
 .posts{
-    -moz-transition: all ease-in 0.5s;
-    -o-transition: all ease-in 0.5s;
-    -webkit-transition: all ease-in 0.5s;
-    transition: all ease-in 0.5s;
     filter: brightness(80%);
     position: relative;
+    transition: 0.5s;
 }
 
 .posts:hover{
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
     filter: brightness(100%);
     opacity: 1;
 }
 
-.text{
-    position: absolute;
-    top:5%;
-    left: 5%;
-    color: #e6e6e6;
-    border-bottom: 2px solid #e6e6e6;
-}
-
 .like{
     position: absolute;
-    top: 50%;
-    left: 40%;
+    top: 35%;
+    left: 45%;
     color: #fff;
     opacity: 0;
     transition: 0.5s;
