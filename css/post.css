@@ -38,3 +38,28 @@ body{
 .portfolio-item:hover span{
     opacity: 1;
 }
+
+.searchbox{
+    padding-bottom: 20px;
+    margin-left: 0px;
+}
+
+.search-icon{
+    padding: 8px;
+    transition: 0.4s;
+}
+
+.search-btn{
+    border: 1px solid #fff;
+    background-color: #cccccc;
+    transition: 0.4s;
+}
+
+.search-btn:hover{
+    background-color: rgba(255, 209, 26, 0.7);
+    border-color: rgba(255, 209, 26, 0.7);
+}
+
+.search-icon:hover{
+    color: #fff;
+}
