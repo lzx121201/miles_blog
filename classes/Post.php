@@ -1,4 +1,5 @@
 <?php
+
 require_once 'Comment.php';
 require_once 'Utility.php';
 require_once './constants.php';
@@ -110,6 +111,7 @@ class Post {
     function setHashtag($hashtag) {
         $this->hashtag = $hashtag;
     }
+
     function getAllowComment() {
         return $this->AllowComment;
     }
@@ -118,7 +120,7 @@ class Post {
         $this->AllowComment = $AllowComment;
     }
 
-        function displayAtHome() {
+    function displayAtHome() {
         $dsn = "mysql:host=localhost;dbname=miles";
         $username = "root";
         $password = "";
@@ -192,23 +194,22 @@ class Post {
         $statement->execute();
         $result = $statement->fetch();
         $statement->closeCursor();
-        $pd = '<h1>'.$this->title.'</h1>
+        $pd = '<h1>' . $this->title . '</h1>
             <p class="lead">by <a href="profile.php">' . $result['name'] . '</a></p>
             <hr>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at '.Utility::formatDate($this->time, "g:is A").'<button class="pull-right like-btn" type=""><i class="fa fa-thumbs-up">&nbsp;&nbsp;'.$this->No_like.'</i></button></p>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at ' . Utility::formatDate($this->time, "g:is A") . '<button class="pull-right like-btn" type=""><i class="fa fa-thumbs-up">&nbsp;&nbsp;' . $this->No_like . '</i></button></p>
 
             <hr>
-            <img class="img-responsive" src="img/'.$this->picName.'" alt="">
+            <img class="img-responsive" src="img/' . $this->picName . '" alt="">
             <hr>
             <p class="lead"></p>
-            <p>'.$this->content.'</p>
+            <p>' . $this->content . '</p>
             <hr>';
-        
+
         return $pd;
     }
 
-    function displayPostComments()
-    {
+    function displayPostComments() {
         $dsn = "mysql:host=localhost;dbname=miles";
         $username = "root";
         $password = "";
@@ -230,25 +231,24 @@ class Post {
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Comment');
         $statement->closeCursor();
-        if($this->AllowComment == 0)
-        {
+        if ($this->AllowComment == 0) {
             return '<center><p>No Comments are allowed on this post :)</p></center>';
-        }
-        if(empty($result))
+        } 
+        else
         {
-            return '<center><p>No Comments so far :)</p></center>';
+            if (empty($result)) 
+            {
+                return '<center><p>No Comments so far :)</p></center>';
+            }
+            else 
+            {
+                $cs = '';
+                foreach ($result as $c) {
+                    $cs += $c->diplayComment();
+                }
+                return substr($cs,0,strlen($cs)-1);
+            }
         }
-        else{
-        $cs='';
-        foreach ($result as $c)
-        {
-            $cs += $c->diplayComment();
-        }
-        return $cs;}
-        if($this->AllowComment == 0)
-        {
-            return '<center><p>No Comments are allowed on this post :)</p></center>';
-        }
-        
     }
+
 }

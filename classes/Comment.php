@@ -99,7 +99,7 @@ class Comment {
                 <img class="media-object" src="img/'.$pic.'" alt=""style="height: 64px; width: 64px;">
             </a>
             <div class="media-body">
-                <h4 class="media-heading">Start Bootstrap
+                <h4 class="media-heading">'.$result['name'].'
                     <small>' . Utility::formatDate($this->time, "F d, Y") . ' at '.Utility::formatDate($this->time, "g:is A").'</small>
                 </h4>
                 '.$this->comment.'

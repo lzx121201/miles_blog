@@ -33,7 +33,10 @@ class User {
         $this->description = $description;
     }
     function getDescription() {
-        return $this->description;
+        if($this->description == "")
+            return "No introduction yet.";
+        else
+            return $this->description;
     }
 
         function getUserID() {

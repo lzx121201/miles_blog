@@ -63,7 +63,7 @@ and open the template in the editor.
                     <hr>
                     <div class="col-lg-8 col-lg-offset-2" id="comment_area">
                         <?php
-                        $result->displayPostComments();
+                        echo $result->displayPostComments();
                         ?>
                     </div>
                 </div>

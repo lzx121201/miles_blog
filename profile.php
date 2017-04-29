@@ -71,12 +71,12 @@ and open the template in the editor.
 
                 <div class="col-md-12" style="top: 20px;">
                     <center>
-                        <h3 id="username"><?php echo $result->getName(); ?> &nbsp;&nbsp;<button type="button" class="glyphicon glyphicon-edit edit-btn"></button></h3>
+                        <h3 id="username"><?php echo $result->getName(); ?> &nbsp;&nbsp;<button type="button" ><a href="editProfile.php" class="glyphicon glyphicon-edit edit-btn"></a></button></h3>
                     </center>
                 </div>
                 
                 <div class="col-md-12" style="color: #fff; top: 20px;">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+                    <center><p><?php echo $result->getDescription();?></p></center>
                 </div>
 
                 <div class="col-md-12" style="color: #fff; top: 20px">
