@@ -71,7 +71,7 @@ and open the template in the editor.
 
                 <div class="col-md-12" style="top: 20px;">
                     <center>
-                        <h3 id="username"><?php echo $result->getName(); ?> &nbsp;&nbsp;<button type="button" ><a href="editProfile.php" class="glyphicon glyphicon-edit edit-btn"></a></button></h3>
+                        <h3 id="username"><?php echo $result->getName(); ?> &nbsp;&nbsp;<button type="button" class="edit-btn" ><a href="editProfile.php" class="glyphicon glyphicon-edit edit-btn"></a></button></h3>
                     </center>
                 </div>
                 
