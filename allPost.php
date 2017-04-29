@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link href="css/post.css" rel="stylesheet" type="text/css"/>
-        <title></title>
+        <title>All Posts</title>
     </head>
     <body>
         <?php

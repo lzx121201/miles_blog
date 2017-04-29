@@ -1,4 +1,5 @@
 <?php
+require_once 'Comment.php';
 require_once 'Utility.php';
 require_once './constants.php';
 /*
@@ -24,7 +25,8 @@ class Post {
     public $No_dislike;
     public $hashtag;
     public $AllowComment;
-                function __construct($PostID = 0, $UserID = 0, $title = '', $content = '', $picName = '', $No_like = 0, $No_dislike = 0, $time = '', $hashtag = '',$AllowComment=1) {
+
+    function __construct($PostID = 0, $UserID = 0, $title = '', $content = '', $picName = '', $No_like = 0, $No_dislike = 0, $time = '', $hashtag = '', $AllowComment = 1) {
         $this->UserID = $UserID;
         $this->PostID = $PostID;
         $this->title = $title;
@@ -108,8 +110,15 @@ class Post {
     function setHashtag($hashtag) {
         $this->hashtag = $hashtag;
     }
+    function getAllowComment() {
+        return $this->AllowComment;
+    }
 
-    function displayAtHome() {
+    function setAllowComment($AllowComment) {
+        $this->AllowComment = $AllowComment;
+    }
+
+        function displayAtHome() {
         $dsn = "mysql:host=localhost;dbname=miles";
         $username = "root";
         $password = "";
@@ -132,35 +141,114 @@ class Post {
         $result = $statement->fetch();
         $statement->closeCursor();
         $str = '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 gallery" style="padding: 0;">
-                <img class="img-responsive img" src="img/' . $this->picName . '" alt=""/>
+                <a href="postDetail.php?post_id=' . $this->PostID . '"><img class="img-responsive img" src="img/' . $this->picName . '" alt=""/></a>
                 <div class="col-md-12 text">
                     <h3 class="title">' . $this->title . '</h3>
                     <span>by <strong>' . $result['name'] . '</strong></span>
-                    <p>' . substr($this->content,0,MAX_LENGTH_OF_C_P) . ' ......'.$this->AllowComment.'</p>
-                    <h5 class="date pull-right">' . Utility::formatDate($this->time,"j M Y") . '</h5>
+                    <p>' . substr($this->content, 0, MAX_LENGTH_OF_C_P) . ' ......' . $this->AllowComment . '</p>
+                    <h5 class="date pull-right">' . Utility::formatDate($this->time, "j M Y") . '</h5>
                 </div>
             </div>';
         return $str;
     }
 
-    function displayTileInList()
-    {
-        return '<li><a href="">'.$this->title.'</a></li>';
-        
+    function displayTileInList() {
+        return '<li><a href="postDetail.php?post_id=' . $this->PostID . '">' . $this->title . '</a></li>';
     }
-    
-    function displayAtAllPost()
-    {
+
+    function displayAtAllPost() {
         $ap = '<div class="col-md-4 portfolio-item">
-                        <a href="#">
-                            <img class="img-responsive posts" src="img/'.$this->picName.'" alt="">
+                        <a href="postDetail.php?post_id=' . $this->PostID . '">
+                            <img class="img-responsive posts" src="img/' . $this->picName . '" alt="">
                         </a>
-                        <span class="fa fa-thumbs-up fa-lg like">&nbsp;&nbsp; '.$this->No_like.'</span>
+                        <span class="fa fa-thumbs-up fa-lg like">&nbsp;&nbsp; ' . $this->No_like . '</span>
                         <h3>
-                            <a href="#" style="color: #000">'.$this->title.'</a>
+                            <a href="#" style="color: #000">' . $this->title . '</a>
                         </h3>
-                        <p>'.substr($this->content,0,MAX_LENGTH_OF_C_P).' ......</p>
+                        <p>' . substr($this->content, 0, MAX_LENGTH_OF_C_P) . ' ......</p>
                     </div>';
         return $ap;
+    }
+
+    function displayAtDetail() {
+        $dsn = "mysql:host=localhost;dbname=miles";
+        $username = "root";
+        $password = "";
+
+        try {
+            $db = new PDO($dsn, $username, $password);
+            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            error_reporting(E_ALL);
+        } catch (Exception $ex) {
+            $form_errors = array();
+            $form_errors[] = $ex->getMessage();
+            include("index.php");
+            exit();
+        }
+        $query = "SELECT * FROM user WHERE UserID = :UID";
+        $statement = $db->prepare($query);
+        $statement->bindValue(':UID', $this->UserID);
+        $statement->execute();
+        $result = $statement->fetch();
+        $statement->closeCursor();
+        $pd = '<h1>'.$this->title.'</h1>
+            <p class="lead">by <a href="profile.php">' . $result['name'] . '</a></p>
+            <hr>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at '.Utility::formatDate($this->time, "g:is A").'<button class="pull-right like-btn" type=""><i class="fa fa-thumbs-up">&nbsp;&nbsp;'.$this->No_like.'</i></button></p>
+
+            <hr>
+            <img class="img-responsive" src="img/'.$this->picName.'" alt="">
+            <hr>
+            <p class="lead"></p>
+            <p>'.$this->content.'</p>
+            <hr>';
+        
+        return $pd;
+    }
+
+    function displayPostComments()
+    {
+        $dsn = "mysql:host=localhost;dbname=miles";
+        $username = "root";
+        $password = "";
+
+        try {
+            $db = new PDO($dsn, $username, $password);
+            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            error_reporting(E_ALL);
+        } catch (Exception $ex) {
+            $form_errors = array();
+            $form_errors[] = $ex->getMessage();
+            include("index.php");
+            exit();
+        }
+        $query = "SELECT * FROM comment WHERE PostID = :PID";
+        $statement = $db->prepare($query);
+        $statement->bindValue(':PID', $this->PostID);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Comment');
+        $statement->closeCursor();
+        if($this->AllowComment == 0)
+        {
+            return '<center><p>No Comments are allowed on this post :)</p></center>';
+        }
+        if(empty($result))
+        {
+            return '<center><p>No Comments so far :)</p></center>';
+        }
+        else{
+        $cs='';
+        foreach ($result as $c)
+        {
+            $cs += $c->diplayComment();
+        }
+        return $cs;}
+        if($this->AllowComment == 0)
+        {
+            return '<center><p>No Comments are allowed on this post :)</p></center>';
+        }
+        
     }
 }

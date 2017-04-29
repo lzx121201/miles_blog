@@ -44,7 +44,6 @@ and open the template in the editor.
         $statement->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'User');
         $result = $statement->fetch();
         $statement->closeCursor();
-        print_r($result);
         ?>
 
 
