@@ -36,10 +36,15 @@ and open the template in the editor.
         ?>
         <div class="container">
             <div class="row">
+
                 <div class="col-lg-8 col-lg-offset-2">
+
                     <?php
                     echo $result->displayAtDetail();
                     ?>
+
+
+
                     <div class="well">
                         <h4>Comments:</h4>
                         <?php if ($L == TRUE && $result->getAllowComment() == 1) { ?>
@@ -54,8 +59,7 @@ and open the template in the editor.
                             </form>
                             <?php
                         }
-                        if($L == FALSE && $result->getAllowComment() == 1)
-                        {
+                        if ($L == FALSE && $result->getAllowComment() == 1) {
                             echo '<center><p>Please <a href="index.php#service">log in</a> or <a href="index.php#portfolio">register</a> to comment.</p></center>';
                         }
                         ?>

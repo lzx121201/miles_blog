@@ -197,8 +197,8 @@ class Post {
         $pd = '<h1>' . $this->title . '</h1>
             <p class="lead">by <a href="profile.php">' . $result['name'] . '</a></p>
             <hr>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at ' . Utility::formatDate($this->time, "g:is A") . '<button class="pull-right like-btn" type=""><i class="fa fa-thumbs-up">&nbsp;&nbsp;' . $this->No_like . '</i></button></p>
-
+            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at ' . Utility::formatDate($this->time, "g:is A") . '<input type="hidden" name="" class="pull-right">'
+                . '<input type="hidden" name="" class="pull-right"><input type="hidden" name="" class="pull-right"><input type="hidden" name="" class="pull-right"><button class="pull-right like-btn" type=""><i class="fa fa-thumbs-up">&nbsp;&nbsp;' . $this->No_like . '</i></button></form></p>
             <hr>
             <img class="img-responsive" src="img/' . $this->picName . '" alt="">
             <hr>
