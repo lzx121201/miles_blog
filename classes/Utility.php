@@ -18,5 +18,15 @@ class Utility {
         return date_format($date,$f);
     }
 
+    static function changeToHashTag($str)
+    {
+        $arr = explode(",",$str);
+        $harr = array();
+        foreach($arr as $s)
+        {
+            array_push($harr,"#".$s);
+        }        
+        return $harr;
+    }
     
 }

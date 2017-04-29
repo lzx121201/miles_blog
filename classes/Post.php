@@ -202,8 +202,17 @@ class Post {
             <hr>
             <img class="img-responsive" src="img/' . $this->picName . '" alt="">
             <hr>
-            <p class="lead"></p>
             <p>' . $this->content . '</p>
+            <p class="lead">';
+            if($this->hashtag != ""){
+            $hashtags = Utility::changeToHashtag($this->hashtag);
+                foreach($hashtags as $tag)
+                {
+                    $pd.= '<a href="allPost.php?keyword='. substr($tag, 1).'&fDate=&tDate=">'.$tag.'</a>';
+                }
+
+            }
+               $pd.= '</p>
             <hr>';
 
         return $pd;

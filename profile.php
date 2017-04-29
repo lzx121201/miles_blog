@@ -1,11 +1,10 @@
 <?php
         require_once 'session_timeout.php';
         include_once 'session.php';
-if ($L == FALSE) {
-                header("location: index.php");
-}else{
-
-?>
+        if ($L == FALSE) {
+    header("location: index.php");
+} else {
+    ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -89,7 +88,7 @@ and open the template in the editor.
                         $result->displayPostsOfUser();
                         ?>
                     </ul>
-                    <a href="" class="pull-right more">MORE &nbsp;&nbsp;<i class="glyphicon glyphicon-arrow-right"></i></a>
+                    <a href="http://localhost/miles_blog/allPost.php?keyword=<?php echo $result->getName();?>&fDate=&tDate=" class="pull-right more">MORE &nbsp;&nbsp;<i class="glyphicon glyphicon-arrow-right"></i></a>
                 </div>
             </div>
         </div>

@@ -33,9 +33,9 @@ and open the template in the editor.
 //        }
 //                $per_page = array_chunk($posts[1-1],MAX_POST_PER_ROW);
 //                print_r($per_page);
-                $password = password_hash("Iam19960915", PASSWORD_DEFAULT);
-                echo $password;
 
+        
+        
         ?>
     </body>
 </html>
