@@ -27,6 +27,7 @@ and open the template in the editor.
         <link href="css/blog.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="js/comment_js.js" type="text/javascript"></script>
+        <script src="js/like_js.js" type="text/javascript"></script>
         <title><?php echo $result->getTitle(); ?></title>
     </head>
     <body>

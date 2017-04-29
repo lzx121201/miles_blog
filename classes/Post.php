@@ -1,5 +1,4 @@
 <?php
-
 require_once 'Comment.php';
 require_once 'Utility.php';
 require_once './constants.php';
@@ -173,6 +172,19 @@ class Post {
     }
 
     function displayAtDetail() {
+        require_once 'constants.php';
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == TRUE) {
+    $U = $_SESSION['username'];
+    $UID = $_SESSION['UserID'];
+    $L = $_SESSION['loggedIn'];
+} else {
+    $L = FALSE;
+}
+
         $dsn = "mysql:host=localhost;dbname=miles";
         $username = "root";
         $password = "";
@@ -197,8 +209,8 @@ class Post {
         $pd = '<h1>' . $this->title . '</h1>
             <p class="lead">by <a href="profile.php">' . $result['name'] . '</a></p>
             <hr>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at ' . Utility::formatDate($this->time, "g:is A") . '<input type="hidden" name="" class="pull-right">'
-                . '<input type="hidden" name="" class="pull-right"><input type="hidden" name="" class="pull-right"><input type="hidden" name="" class="pull-right"><button class="pull-right like-btn" type=""><i class="fa fa-thumbs-up">&nbsp;&nbsp;' . $this->No_like . '</i></button></form></p>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at ' . Utility::formatDate($this->time, "g:is A") . '<form><input type="hidden"  value="'.$this->PostID.'" name="PID" id="PID" class="pull-right">'
+                . '<input type="hidden" name="UID" id="UID" value="'.$UID.'" class="pull-right"><input type="hidden" name="No_like" id="No_like" value="'.$this->No_like.'" class="pull-right"><input type="hidden" name="loggedIn" id="loggedIn" value="'.$L.'" class="pull-right"><button class="pull-right like-btn" type="button" id="like_button"><i class="fa fa-thumbs-up">&nbsp;&nbsp;' . $this->No_like . '</i></button></form></p>
             <hr>
             <img class="img-responsive" src="img/' . $this->picName . '" alt="">
             <hr>
