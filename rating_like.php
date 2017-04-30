@@ -19,6 +19,7 @@ $stmt1->execute();
 $result1 = $stmt1->fetch();
 $stmt1->closeCursor();
 $c = $result6['No_like'];
+$color = '';
 //echo empty($result1);
 if (!empty($result1)) {
     $query4 = "DELETE FROM rating WHERE PostID = :pid AND UserID = :uid";
@@ -28,6 +29,7 @@ if (!empty($result1)) {
     $stmt4->execute();
     $stmt4->closeCursor();
     $c = $c - 1;
+    $color = 'black';
 } else {
     $query2 = "INSERT INTO rating (PostID,UserID) VALUES (:pid,:uid)";
     $stmt2 = $db->prepare($query2);
@@ -36,6 +38,7 @@ if (!empty($result1)) {
     $stmt2->execute();
     $stmt2->closeCursor();
     $c = $c + 1;
+    $color = '#ffd11a';
 }
 $query3 = "UPDATE post SET No_like = :c WHERE PostID = :pid";
 $stmt3 = $db->prepare($query3);
@@ -50,5 +53,5 @@ $stmt5->bindValue(':pid', $PID);
 $stmt5->execute();
 $result5 = $stmt5->fetch();
 $stmt5->closeCursor();
-$s = '<i class="fa fa-thumbs-up">&nbsp;&nbsp;' . $result5['No_like'] . '</i>';
+$s = '<i class="fa fa-thumbs-up" style="color:'.$color.';">&nbsp;&nbsp;' . $result5['No_like'] . '</i>';
 echo $s;
