@@ -15,18 +15,19 @@ require_once './constants.php';
  */
 class Post {
 
-    public $UserID;
-    public $PostID;
-    public $title;
-    public $content;
-    public $time;
-    public $picName;
-    public $No_like;
-    public $No_dislike;
-    public $hashtag;
-    public $AllowComment;
+    private $UserID;
+    private $PostID;
+    private $title;
+    private $content;
+    private $time;
+    private $picName;
+    private $No_like;
+    private $No_dislike;
+    private $hashtag;
+    private $AllowComment;
+    private $filter_keyword;
 
-    function __construct($PostID = 0, $UserID = 0, $title = '', $content = '', $picName = '', $No_like = 0, $No_dislike = 0, $time = '', $hashtag = '', $AllowComment = 1) {
+    function __construct($PostID = 0, $UserID = 0, $title = '', $content = '', $picName = '', $No_like = 0, $No_dislike = 0, $time = '', $hashtag = '', $AllowComment = 1,$filter_keyword = '') {
         $this->UserID = $UserID;
         $this->PostID = $PostID;
         $this->title = $title;
@@ -37,6 +38,7 @@ class Post {
         $this->No_dislike = $No_dislike;
         $this->hashtag = $hashtag;
         $this->AllowComment = $AllowComment;
+        $this->filter_keyword = $filter_keyword;
     }
 
     function getUserID() {
@@ -118,8 +120,15 @@ class Post {
     function setAllowComment($AllowComment) {
         $this->AllowComment = $AllowComment;
     }
+    function getFilter_keyword() {
+        return $this->filter_keyword;
+    }
 
-    function displayAtHome() {
+    function setFilter_keyword($filter_keyword) {
+        $this->filter_keyword = $filter_keyword;
+    }
+
+        function displayAtHome() {
         $dsn = "mysql:host=localhost;dbname=miles";
         $username = "root";
         $password = "";
@@ -209,7 +218,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == TRUE) {
         $pd = '<h1>' . $this->title . '</h1>
             <p class="lead">by <a href="profile.php">' . $result['name'] . '</a></p>
             <hr>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at ' . Utility::formatDate($this->time, "g:is A") . '<form><input type="hidden"  value="'.$this->PostID.'" name="PID" id="PID" class="pull-right">'
+            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->time, "F d, Y") . ' at ' . Utility::formatDate($this->time, "g:i:s A") . '<form><input type="hidden"  value="'.$this->PostID.'" name="PID" id="PID" class="pull-right">'
                 . '<input type="hidden" name="UID" id="UID" value="'.$UID.'" class="pull-right"><input type="hidden" name="No_like" id="No_like" value="'.$this->No_like.'" class="pull-right"><input type="hidden" name="loggedIn" id="loggedIn" value="'.$L.'" class="pull-right"><button class="pull-right like-btn" type="button" id="like_button"><i class="fa fa-thumbs-up">&nbsp;&nbsp;' . $this->No_like . '</i></button></form></p>
             <hr>
             <img class="img-responsive" src="img/' . $this->picName . '" alt="">

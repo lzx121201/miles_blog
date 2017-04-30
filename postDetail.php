@@ -28,6 +28,7 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="js/comment_js.js" type="text/javascript"></script>
         <script src="js/like_js.js" type="text/javascript"></script>
+        <script src="js/filterComment_js.js" type="text/javascript"></script>
         <title><?php echo $result->getTitle(); ?></title>
     </head>
     <body>
@@ -58,7 +59,27 @@ and open the template in the editor.
                                 </div>
                                 <button type="button" id="comment_button" class="btn btn-primary comment-btn">Submit</button>
                             </form>
+                        <br>
+                        
                             <?php
+                            
+                            
+                            if($result->getUserID() == $UID)
+                            {
+                                ?>
+                        <form method="post"role="form">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="kw" name="kw" rows="1" placeholder="Please enter the keywords"><?php echo $result->getFilter_keyword(); ?></textarea>
+<!--                                    <input type='hidden' name="UID" id="UID" value="<?php echo $UID; ?>"/>-->
+                                    <input type='hidden' name="PID" id="PID" value="<?php echo $result->getPostID(); ?>"/>
+
+                                </div>
+                                <button type="button" id="filterC_button" class="btn btn-primary comment-btn">Filter Comments</button>
+                            </form>
+                        
+                        
+                        <?php
+                            }
                         }
                         if ($L == FALSE && $result->getAllowComment() == 1) {
                             echo '<center><p>Please <a href="index.php#service">log in</a> or <a href="index.php#portfolio">register</a> to comment.</p></center>';

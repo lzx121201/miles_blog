@@ -15,13 +15,13 @@ require_once './constants.php';
 require_once 'Post.php';
 class User {
 
-    public $UserID;
-    public $name;
-    public $password;
-    public $email;
-    public $gender;
-    public $profilePic;
-    public $description;
+    private $UserID;
+    private $name;
+    private $password;
+    private $email;
+    private $gender;
+    private $profilePic;
+    private $description;
 
     function __construct($UserID = 0, $name = "", $password = "", $email = "", $gender = "", $profilePic = "",$description = "") {
         $this->UserID = $UserID;
