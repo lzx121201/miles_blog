@@ -190,7 +190,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == TRUE) {
     $UID = $_SESSION['UserID'];
     $L = $_SESSION['loggedIn'];
 } else {
-    $L = FALSE;
+    $L = FALSE;$UID=0;
 }
 
         $dsn = "mysql:host=localhost;dbname=miles";

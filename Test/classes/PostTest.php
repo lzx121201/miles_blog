@@ -240,25 +240,6 @@ class PostTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @covers Post::displayAtHome
-     * @todo   Implement testDisplayAtHome().
-     */
-//    public function testDisplayAtHome()
-//    {
-//        $this->expectedOutputString('<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 gallery" style="padding: 0;">
-//                <a href="postDetail.php?post_id=' . $this->object->getPostID() . '"><img class="img-responsive img" src="img/' . $this->object->getPicName() . '" alt=""/></a>
-//                <div class="col-md-12 text">
-//                    <h3 class="title">' . $this->object->getTitle() . '</h3>
-//                    <span>by <strong>' . $result['name'] . '</strong></span>
-//                    <p>' . substr($this->object->getContent(), 0, MAX_LENGTH_OF_C_P) . ' ...... </p>
-//                    <h5 class="date pull-right">' . Utility::formatDate($this->time, "j M Y") . '</h5>
-//                </div>
-//            </div>');
-//        $this->object->displayAtHome()
-//        ;
-//    }
-
-    /**
      * @covers Post::displayTileInList
      * @todo   Implement testDisplayTileInList().
      */
@@ -285,26 +266,6 @@ class PostTest extends PHPUnit_Framework_TestCase {
                     </div>', $this->object->displayAtAllPost()
         );
     }
-
-    /**
-     * @covers Post::displayAtDetail
-     * @todo   Implement testDisplayAtDetail().
-     */
-//    public function testDisplayAtDetail()
-//    {
-//        $this->expectedOutputString('<h1>' . $this->object->getTitle() . '</h1>
-//            <p class="lead">by <a href="profile.php">' . $result['name'] . '</a></p>
-//            <hr>
-//            <p><span class="glyphicon glyphicon-time"></span> Posted on ' . Utility::formatDate($this->object->getTime(), "F d, Y") . ' at ' . Utility::formatDate($this->object->getTime(), "g:i:s A") . '<form><input type="hidden"  value="'.$this->object->getPostID().'" name="PID" id="PID" class="pull-right">'
-//                . '<input type="hidden" name="UID" id="UID" value="'.$UID.'" class="pull-right"><input type="hidden" name="No_like" id="No_like" value="'.$this->object->getNo_like().'" class="pull-right"><input type="hidden" name="loggedIn" id="loggedIn" value="'.$L.'" class="pull-right"><button class="pull-right like-btn" type="button" id="like_button"><i class="fa fa-thumbs-up">&nbsp;&nbsp;' . $this->object->getNo_like() . '</i></button></form></p>
-//            <hr>
-//            <img class="img-responsive" src="img/' . $this->object->getPicName() . '" alt="">
-//            <hr>
-//            <p>' . $this->object->getContent() . '</p>
-//            <p class="lead">');
-//        
-//        $this->object->displayAtAllDetail();
-//    }
 
     /**
      * @covers Post::displayPostComments
