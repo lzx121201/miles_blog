@@ -155,7 +155,7 @@ class Post {
                 <div class="col-md-12 text">
                     <h3 class="title">' . $this->title . '</h3>
                     <span>by <strong>' . $result['name'] . '</strong></span>
-                    <p>' . substr($this->content, 0, MAX_LENGTH_OF_C_P) . ' ......' . $this->AllowComment . '</p>
+                    <p>' . substr($this->content, 0, MAX_LENGTH_OF_C_P) . ' ...... </p>
                     <h5 class="date pull-right">' . Utility::formatDate($this->time, "j M Y") . '</h5>
                 </div>
             </div>';
