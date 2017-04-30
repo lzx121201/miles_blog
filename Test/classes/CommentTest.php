@@ -17,7 +17,7 @@ class CommentTest extends PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->object = new Comment(1, 1, 1, "nice", "2017-04-28 01:00:43");
+        $this->object = new Comment(1, 1, 1, "nice", "2017-04-28 01:00:43", 1);
     }
 
     /**
@@ -49,6 +49,30 @@ class CommentTest extends PHPUnit_Framework_TestCase {
         $this->object->setCommentID(1);
         $this->assertEquals(
                 1, $this->object->getCommentID()
+        );
+    }
+    
+    /**
+     * @covers Comment::getIsFiltered
+     * @todo   Implement testGetIsFiltered().
+     * @test
+     */
+    public function GetIsFiltered() {
+        // Remove the following lines when you implement this test.
+        $this->assertEquals(
+                1, $this->object->getIsFiltered()
+        );
+    }
+
+    /**
+     * @covers Comment::setIsFilteredID
+     * @todo   Implement testSetIsFilteredID().
+     * @test
+     */
+    public function SetIsFiltered() {
+        $this->object->setIsFiltered(1);
+        $this->assertEquals(
+                1, $this->object->getIsFiltered()
         );
     }
 
@@ -149,10 +173,8 @@ class CommentTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testDiplayComment().
      */
     public function testDiplayComment() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->expectOutputString("");
+        $this->object->diplayComment();
     }
 
 }
